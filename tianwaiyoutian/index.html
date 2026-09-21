@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天外有天-探索未知宇宙与科幻文学深度指南</title>
+    <meta name="description" content="天外有天，致力于提供前沿的宇宙探索资讯、硬科幻文学推荐及航天科技解读。探索星际边界，领略科幻魅力，满足你对未知世界的无限遐想。">
+    <meta name="keywords" content="天外有天,宇宙探索,科幻文学,航天科技,星际旅行,未知世界">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --space-black: #0b0d17;
+            --deep-blue: #151932;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #bc13fe;
+            --text-white: #e0e6ed;
+            --text-gray: #94a3b8;
+            --card-bg: rgba(30, 34, 60, 0.7);
+            --border-glow: 0 0 10px rgba(0, 240, 255, 0.3);
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--space-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 背景星空动画 */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: rgba(11, 13, 23, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(11, 13, 23, 0.6), var(--space-black)), url('https://picsum.photos/seed/galaxy/1920/1080.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--accent-cyan);
+            color: var(--space-black);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+        }
+
+        /* 内容区域 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-purple);
+            border-radius: 2px;
+        }
+
+        /* 资讯网格 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--border-glow);
+            border-color: rgba(0, 240, 255, 0.3);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 深度解读 */
+        .featured-article {
+            background: linear-gradient(135deg, rgba(30, 34, 60, 0.8), rgba(11, 13, 23, 0.9));
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .featured-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .featured-article:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-cyan);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #05060a;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* 动画关键帧 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* 移动端简化：隐藏菜单 */
+            .featured-article { flex-direction: column; }
+            .featured-image { width: 100%; height: 250px; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 动态背景星空 -->
+    <div class="stars" id="stars"></div>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    天外有天
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#news">前沿资讯</a></li>
+                    <li><a href="#guide">探索指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索宇宙边界，认知天外有天</h1>
+            <p>从深空探测到理论物理，从硬科幻文学到未来科技趋势。在这里，我们重新定义对未知的理解。</p>
+            <a href="#guide" class="btn">开始探索之旅</a>
+        </div>
+    </section>
+
+    <!-- 核心内容：前沿资讯 -->
+    <section id="news" class="container">
+        <div class="section-title">
+            <h2>前沿探索</h2>
+            <p style="color: var(--text-gray);">追踪人类迈向星辰大海的最新步伐</p>
+        </div>
+        <div class="grid-3">
+            <article class="card">
+                <img src="https://picsum.photos/seed/mars/400/250" alt="火星殖民" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">深空探测</span>
+                    <h3>火星殖民：现实与科幻的距离</h3>
+                    <p>随着SpaceX星舰项目的推进，人类移居火星已从单纯的科幻构想转变为具有时间表的技术挑战。</p>
+                    <a href="#" class="card-link">阅读详情 &rarr;</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://picsum.photos/seed/blackhole/400/250" alt="黑洞研究" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">天体物理</span>
+                    <h3>事件视界之外的奥秘</h3>
+                    <p>詹姆斯·韦伯望远镜传回的首张黑洞照片揭示了宇宙极端环境下的引力与光线的奇异行为。</p>
+                    <a href="#" class="card-link">阅读详情 &rarr;</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://picsum.photos/seed/tech/400/250" alt="AI与宇宙" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">未来科技</span>
+                    <h3>人工智能在宇宙探索中的应用</h3>
+                    <p>AI不仅是数据分析的工具，更是星际航行中不可或缺的决策系统与生命维持助手。</p>
+                    <a href="#" class="card-link">阅读详情 &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 深度解读 -->
+    <section class="container">
+        <div class="featured-article">
+            <div class="featured-content">
+                <span class="card-tag">深度解读</span>
+                <h3>费米悖论：我们在宇宙中为何是孤独的？</h3>
+                <p style="margin-bottom: 20px; color: var(--text-gray);">
+                    “那里都在哪儿呢？”这是物理学家费米提出的著名问题。如果宇宙如此古老且浩瀚，拥有数十亿个类似太阳系的恒星，为什么我们至今还没有发现地外文明？本文将从大过滤器理论、黑暗森林法则以及地球生物学的独特性等角度，为您剖析这一终极谜题。
+                </p>
+                <a href="#" class="btn">阅读深度长文</a>
+            </div>
+            <div class="featured-image">
+                <img src="https://picsum.photos/seed/paradox/600/400" alt="费米悖论">
+            </div>
+        </div>
+    </section>
+
+    <!-- 探索指南 -->
+    <section id="guide" class="container">
+        <div class="section-title">
+            <h2>探索指南</h2>
+            <p style="color: var(--text-gray);">如何开始你的天文与科幻之旅</p>
+        </div>
+        <div class="grid-3">
+            <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 8px;">
+                <h4 style="color: var(--accent-cyan); margin-bottom: 15px;">必读科幻经典</h4>
+                <ul style="list-style: none; color: var(--text-gray); line-height: 2;">
+                    <li>《三体》 - 刘慈欣</li>
+                    <li>《沙丘》 - 弗兰克·赫伯特</li>
+                    <li>《银河帝国》系列 - 阿西莫夫</li>
+                    <li>《海伯利安》 - 丹·西蒙斯</li>
+                </ul>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 8px;">
+                <h4 style="color: var(--accent-cyan); margin-bottom: 15px;">实用观星工具</h4>
+                <ul style="list-style: none; color: var(--text-gray); line-height: 2;">
+                    <li>Stellarium (星图软件)</li>
+                    <li>Sky Safari (专业天文馆)</li>
+                    <li>Dark Sky App (实时天气)</li>
+                    <li>NASA App (官方资讯)</li>
+                </ul>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 8px;">
+                <h4 style="color: var(--accent-cyan); margin-bottom: 15px;">科普入门推荐</h4>
+                <ul style="list-style: none; color: var(--text-gray); line-height: 2;">
+                    <li>《时间简史》</li>
+                    <li>《宇宙》 - 卡尔·萨根</li>
+                    <li>《果壳中的宇宙》</li>
+                    <li>《给忙碌者的天体物理学》</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="container">
+        <div class="section-title">
+            <h2>常见问题</h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">什么是“天外有天”？</div>
+            <div class="faq-answer">“天外有天”原意指天空之外还有天空，比喻学问或技艺没有止境。在科幻与宇宙探索语境下，它象征着人类对宇宙无限未知领域的探索精神，以及探索过程中不断突破认知边界的哲学思考。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">普通人如何参与太空探索？</div>
+            <div class="faq-answer">虽然普通人无法直接驾驶飞船，但可以通过参与太空竞赛、支持商业航天公司、学习天文知识、关注科学新闻以及参与相关的科普活动来间接参与和见证这一历史进程。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">目前人类最远到达了哪里？</div>
+            <div class="faq-answer">截至2023年，人类发射的探测器“旅行者1号”和“旅行者2号”已经飞出了太阳系的日球层顶，成为了人类历史上距离地球最远的物体，正在向星际空间进发。</div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">天外有天</div>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">
+                        致力于普及宇宙科学知识，分享前沿科技资讯，激发公众对未知世界的探索热情。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">深空探测</a></li>
+                        <li><a href="#">科幻文学</a></li>
+                        <li><a href="#">理论物理</a></li>
+                        <li><a href="#">未来科技</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅更新</h4>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 10px;">获取最新宇宙资讯与科幻书单。</p>
+                    <input type="email" placeholder="您的邮箱地址" style="width: 100%; padding: 8px; border-radius: 4px; border: none; background: rgba(255,255,255,0.1); color: white;">
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 天外有天. All Rights Reserved. 本站内容仅供学习与交流使用。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 生成随机星空背景
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // 随机位置
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                // 随机大小
+                const size = Math.random() * 2 + 1;
+                // 随机动画时长
+                const duration = Math.random() * 3 + 2;
+
+                star.style.left = x + '%';
+                star.style.top = y + '%';
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.setProperty('--duration', duration + 's');
+
+                starsContainer.appendChild(star);
+            }
+
+            // FAQ 折叠交互
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
