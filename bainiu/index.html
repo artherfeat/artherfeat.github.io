@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白牛 - 优质牛肉选购与烹饪百科指南</title>
+    <meta name="description" content="白牛 - 本地优质黄牛品种介绍、养殖环境、肉质特点解析及科学烹饪方法。提供牛肉选购指南、营养价值分析及常见食谱推荐，助您挑选到新鲜美味的牛肉。">
+    <meta name="keywords" content="白牛, 黄牛品种, 优质牛肉, 牛肉选购, 牛肉烹饪, 肉质分析">
+    <style>
+        :root {
+            --primary-color: #8B5A2B; /* 深棕色 */
+            --secondary-color: #D2691E; /* 巧克力色 */
+            --accent-color: #F4A460; /* 沙褐色 */
+            --bg-color: #FDFBF7; /* 米白色 */
+            --card-bg: #FFFFFF;
+            --text-main: #2C2C2C;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/cattle/1920/600.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-text h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background: var(--bg-color);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Content Layout (Left/Right) */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .article-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .article-card p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .article-card ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .article-card li {
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+
+        /* Sidebar */
+        aside .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        aside h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .recipe-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .recipe-list li:last-child {
+            border-bottom: none;
+        }
+
+        .recipe-list a {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .recipe-list span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+            padding-left: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .intro-grid, .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><span>白牛</span>百科</a>
+            <nav>
+                <ul>
+                    <li><a href="#intro">品种介绍</a></li>
+                    <li><a href="#features">选购指南</a></li>
+                    <li><a href="#recipes">烹饪食谱</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#recipes" class="cta-button">开始烹饪</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索白牛的独特魅力</h1>
+                <p>白牛作为优质的肉牛品种，以其肉质鲜嫩、风味独特而闻名。了解其生长习性、挑选技巧与烹饪方法，让每一餐都充满美味。</p>
+                <a href="#intro" class="cta-button" style="background: #fff; color: var(--primary-color);">了解更多</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Intro Section -->
+            <section id="intro" class="intro-grid">
+                <div class="intro-text">
+                    <h2>什么是白牛？</h2>
+                    <p>白牛并非指通体白色的特定单一品种，而是泛指在特定养殖环境下，毛色偏白或具有明显白斑特征的优质黄牛或杂交肉牛。这类牛通常生长周期适中，肌肉纤维细腻，脂肪分布均匀。</p>
+                    <p>在市场上，白牛因其独特的肉质纹理和较低的胆固醇含量而受到消费者的青睐。无论是制作高档牛排，还是炖煮滋补汤品，白牛都能展现出极佳的风味。</p>
+                    <p>选择白牛作为食材，不仅是对美味的追求，更是对健康饮食的一种选择。</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://picsum.photos/seed/cattlefield/600/400.jpg" alt="白牛在草原上吃草">
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="features">
+                <div class="section-header">
+                    <h2>白牛的四大优势</h2>
+                    <p>为什么越来越多的家庭和餐厅选择白牛作为主要食材？</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon-box">🥩</div>
+                        <h3>肉质鲜嫩</h3>
+                        <p>肌间脂肪含量高，口感多汁，适合煎烤和涮煮。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🌱</div>
+                        <h3>绿色养殖</h3>
+                        <p>多采用放牧与科学补饲结合，饲料天然无污染。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">⚖️</div>
+                        <h3>营养均衡</h3>
+                        <p>富含优质蛋白质和必需氨基酸，营养价值高。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🌡️</div>
+                        <h3>风味独特</h3>
+                        <p>自带天然奶香味，烹饪后香气扑鼻，回味悠长。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Layout -->
+            <section class="content-layout">
+                <article class="article-card">
+                    <h3>如何挑选优质白牛肉？</h3>
+                    <p>在购买白牛相关产品时，掌握正确的挑选方法至关重要。以下是几个关键指标：</p>
+                    <ul>
+                        <li><strong>看颜色：</strong>优质白牛肉应呈鲜红色或樱桃红，有光泽。如果颜色发暗或发灰，说明新鲜度较差。</li>
+                        <li><strong>摸手感：</strong>表面微干或微湿润，不粘手。如果摸起来粘手，说明肉质已经变质。</li>
+                        <li><strong>闻气味：</strong>应有淡淡的腥味或奶香味。如果有酸味、臭味或其他异味，请勿购买。</li>
+                        <li><strong>看脂肪：</strong>脂肪洁白或呈淡黄色，质地坚硬。如果脂肪发软或颜色发黄，可能不新鲜。</li>
+                    </ul>
+                    <p>建议选择信誉良好的品牌或正规市场，确保食材来源可靠。</p>
+                </article>
+
+                <aside>
+                    <div class="sidebar-widget">
+                        <h3>热门食谱推荐</h3>
+                        <ul class="recipe-list">
+                            <li>
+                                <a href="#">白牛番茄炖牛腩</a>
+                                <span>耗时：2小时 | 难度：中等</span>
+                            </li>
+                            <li>
+                                <a href="#">白牛西冷牛排</a>
+                                <span>耗时：20分钟 | 难度：简单</span>
+                            </li>
+                            <li>
+                                <a href="#">白牛萝卜清汤</a>
+                                <span>耗时：1.5小时 | 难度：简单</span>
+                            </li>
+                            <li>
+                                <a href="#">白牛火锅拼盘</a>
+                                <span>耗时：30分钟 | 难度：简单</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>选购小贴士</h3>
+                        <p style="font-size: 0.9rem; color: #666;">
+                            购买冷冻白牛肉时，注意查看生产日期和保质期。解冻后的牛肉应尽快食用，不宜反复冷冻。
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于白牛的饲养、选购及食用，您可能关心这些问题。</p>
+                </div>
+                <div class="container">
+                    <div class="faq-item">
+                        <div class="faq-question">白牛和普通黄牛有什么区别？</div>
+                        <div class="faq-answer">
+                            白牛通常指毛色偏白或具有特定白斑特征的黄牛品种，其肉质更嫩、脂肪分布更均匀。普通黄牛毛色多为黄褐色，肉质相对紧实。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">白牛肉适合哪些烹饪方式？</div>
+                        <div class="faq-answer">
+                            白牛肉由于肉质鲜嫩，非常适合煎、炒、烤、涮等烹饪方式。对于较老的部位，炖煮或红烧能使其变得软烂入味。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断白牛肉是否新鲜？</div>
+                        <div class="faq-answer">
+                            新鲜的白牛肉颜色鲜红有光泽，表面微干不粘手，闻起来有自然的肉香。如果出现异味、发粘或颜色发暗，则说明不新鲜。
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于白牛</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        致力于推广优质白牛品种知识，提供科学、健康的牛肉饮食指南。我们相信，好的食材是美味的基础。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#intro">品种介绍</a></li>
+                        <li><a href="#features">选购指南</a></li>
+                        <li><a href="#recipes">烹饪食谱</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：info@bai-niu-guide.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：中国某市某区农业示范区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 白牛百科指南 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
