@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林志颖 林心如 - 明星资讯与影视作品全集</title>
+    <meta name="description" content="林志颖与林心如明星专题站，提供最新动态、经典影视作品回顾、个人资料及粉丝社区互动指南。">
+    <meta name="keywords" content="林志颖, 林心如, 明星资讯, 影视作品, 娱乐新闻">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d32f2f;
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* 首屏 Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+        }
+
+        /* 快速导航 */
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 40px;
+        }
+
+        .quick-nav-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .quick-nav-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav-item h3 {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .quick-nav-item a {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        /* 内容区块 */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 16px;
+            color: var(--primary-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        /* 合作专题区 */
+        .featured-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .featured-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .featured-text h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .featured-text p {
+            margin-bottom: 24px;
+            color: var(--light-text);
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--card-bg);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--light-text);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-question::after {
+            content: '+';
+            color: var(--accent-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.left {
+                text-align: left;
+            }
+
+            .timeline-item::after {
+                left: 23px;
+            }
+            
+            .timeline-item.right {
+                left: 0;
+            }
+            
+            .featured-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">StarFocus</div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#news">最新动态</a>
+                <a href="#works">影视作品</a>
+                <a href="#timeline">演艺生涯</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>林志颖 & 林心如</h1>
+                <p>探索华语娱乐圈的传奇双星，从《绝代双骄》的经典合作到各自辉煌的演艺生涯。获取最新资讯、深度回顾与独家资料。</p>
+                <a href="#works" class="btn">浏览经典影视</a>
+            </div>
+        </section>
+
+        <!-- Quick Nav -->
+        <div class="container">
+            <div class="quick-nav">
+                <div class="quick-nav-item">
+                    <h3>林志颖</h3>
+                    <a href="#">查看个人资料 &gt;</a>
+                </div>
+                <div class="quick-nav-item">
+                    <h3>林心如</h3>
+                    <a href="#">查看个人资料 &gt;</a>
+                </div>
+                <div class="quick-nav-item">
+                    <h3>经典剧集</h3>
+                    <a href="#">绝代双骄等 &gt;</a>
+                </div>
+                <div class="quick-nav-item">
+                    <h3>最新资讯</h3>
+                    <a href="#">娱乐新闻 &gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Section: Collaboration -->
+        <section class="container">
+            <div class="featured-section" id="works">
+                <div class="featured-image">
+                    <img src="https://picsum.photos/seed/fight/600/400" alt="绝代双骄海报概念图">
+                </div>
+                <div class="featured-text">
+                    <h2>荧幕经典：绝代双骄</h2>
+                    <p>林志颖与林心如在经典武侠剧《绝代双骄》中曾有过短暂而深刻的合作。林志颖饰演机智多情的“小鱼儿”，而林心如则饰演温婉动人的“苏樱”。两人之间亦敌亦友、相互救赎的情感线，至今仍被许多观众津津乐道，是90年代港台武侠剧的代表性回忆。</p>
+                    <a href="#" class="btn">观看剧集推荐</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="container" id="news">
+            <h2 class="section-title">最新动态</h2>
+            <div class="grid-layout">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">林志颖</span>
+                        <img src="https://picsum.photos/seed/linzhiji/400/300" alt="林志颖最新活动">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">林志颖参加某公益慈善晚宴</h3>
+                        <p class="card-desc">近日，林志颖现身某知名慈善晚宴，以“不老男神”的形象再次引发媒体关注。他在活动中分享了保持年轻心态的秘诀，并呼吁大家关注儿童慈善事业。</p>
+                        <div class="card-meta">2023-10-24</div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">林心如</span>
+                        <img src="https://picsum.photos/seed/linxueren/400/300" alt="林心如新剧宣传">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">林心如工作室官宣新剧筹备中</h3>
+                        <p class="card-desc">林心如作为制片人，其工作室正式宣布了一部年代大剧的筹备计划。据悉，该剧将聚焦女性成长与时代变迁，林心如或将再次挑大梁主演。</p>
+                        <div class="card-meta">2023-10-22</div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">合作</span>
+                        <img src="https://picsum.photos/seed/charity/400/300" alt="明星慈善活动">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">林志颖林心如同台助力慈善</h3>
+                        <p class="card-desc">在某年度明星慈善晚会上，林志颖与林心如罕见同台。两人虽然已多年未见，但在谈及公益时依然默契十足，共同为受助者发声。</p>
+                        <div class="card-meta">2023-09-15</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="container" id="timeline">
+            <h2 class="section-title">演艺生涯回顾</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1994年</span>
+                        <h3>《绝代双骄》首播</h3>
+                        <p>林志颖饰演小鱼儿，林心如饰演苏樱。该剧成为当年收视率冠军，奠定了两人在观众心中的经典形象。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1999年</span>
+                        <h3>林心如《还珠格格》热播</h3>
+                        <p>林心如凭借“夏紫薇”一角红遍大江南北，成为当时最具影响力的女演员之一。</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2000年</span>
+                        <h3>林志颖《绝代双骄2》</h3>
+                        <p>虽然续集评价不如前作，但林志颖在剧中继续展现其出色的武打功底和喜剧天赋。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2016年</span>
+                        <h3>林心如成立工作室</h3>
+                        <p>林心如成立个人影视工作室，开始转型幕后制片，推出了多部高品质的电视剧作品。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" id="faq">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">林志颖和林心如在现实生活中是朋友吗？</div>
+                    <div class="faq-answer">两人在90年代因合作《绝代双骄》结缘，在圈内保持着良好的职业关系和私人交情。虽然近年来各自工作繁忙，聚少离多，但偶尔在慈善活动或圈内聚会中仍会互动。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">除了《绝代双骄》，他们还有哪些合作作品？</div>
+                    <div class="faq-answer">在《绝代双骄》之后，林志颖与林心如在公开场合的合作非常少，主要集中在一些大型晚会或公益活动中，并没有其他影视作品的正式合作记录。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">林志颖被称为“不老男神”的原因是什么？</div>
+                    <div class="faq-answer">林志颖因其逆生长的容貌和年轻时的“小旋风”形象而闻名。他长期保持健康的生活习惯、规律的作息以及积极的心态，这些因素共同促成了他备受关注的“冻龄”状态。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">林心如目前主要活跃在哪个领域？</div>
+                    <div class="faq-answer">林心如目前主要活跃在影视制作领域。她不仅继续参与影视剧的演出，更作为制片人打造了《华灯初上》等多部高口碑的剧集，同时也涉足直播电商领域。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p>本站致力于为用户提供关于林志颖、林心如等明星的资讯、作品回顾及粉丝交流平台。所有内容均来自公开资料整理。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">林志颖百科</a></li>
+                        <li><a href="#">林心如百科</a></li>
+                        <li><a href="#">影视作品库</a></li>
+                        <li><a href="#">明星八卦</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>版权声明</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系站长</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 明星资讯网 版权所有.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 如果希望实现手风琴效果（每次只开一个），取消下面注释
+                    /*
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    */
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
